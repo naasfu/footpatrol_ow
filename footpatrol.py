@@ -57,7 +57,7 @@ def footpatrol(emails):
 	'termsAgreed': 'Agrees to terms',	# Do not change.
 	}
 
-			postrequest = requests.post('https://blog.jdsports.co.uk/apps/FPCompApp.php', headers=headers, data=payload)
+			postrequest = requests.post('https://blog.jdsports.co.uk/apps/FPCompApp.php', headers=headers, data=payload, proxies=proxy)
 			if 'duplicate' in postrequest.text:
 		            print(time.strftime("[%H:%M:%S]") + " - Could not enter" + " - " + email )
 			else:
